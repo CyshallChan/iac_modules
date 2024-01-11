@@ -1,12 +1,12 @@
 FROM hashicorp/terraform:1.2.1 
-LABEL maintainer="Haitao Pan <xz@onwalk.net>"
+LABEL maintainer="Haitao Pan <xz@cyshall.com>"
 
 ARG GLIBC_VERSION=2.34-r0
 ARG AWSCLI_VERSION=2.6.1
 
 RUN apk add --update --no-cache bash wget make curl jq py3-pip unzip zip && mkdir -pv /root/.terraform.d/plugin-cache && pip3 install jinja2 hvac python-hcl2
-RUN wget https://mirrors.onwalk.net/tools/linux-amd64/gauth.tar.gz && tar -xvpf gauth.tar.gz -C /usr/bin/ && chmod 755 /usr/bin/gauth
-RUN wget https://mirrors.onwalk.net/tools/linux-amd64/gitleaks_8.8.5_linux_x64.tar.gz && tar -xvpf gitleaks_8.8.5_linux_x64.tar.gz && cp gitleaks /usr/bin/ && chmod 755 /usr/bin/gitleaks
+RUN wget https://mirrors.cyshall.com/tools/linux-amd64/gauth.tar.gz && tar -xvpf gauth.tar.gz -C /usr/bin/ && chmod 755 /usr/bin/gauth
+RUN wget https://mirrors.cyshall.com/tools/linux-amd64/gitleaks_8.8.5_linux_x64.tar.gz && tar -xvpf gitleaks_8.8.5_linux_x64.tar.gz && cp gitleaks /usr/bin/ && chmod 755 /usr/bin/gitleaks
 
 
 # install glibc compatibility for alpine

@@ -30,7 +30,7 @@ disable_checkpoint = true
 disable_checkpoint_signature = true
 host "registry.terraform.io" {
     services = {
-      "providers.v1" = "https://mirrors.onwalk.net/terraform/v1/providers/"
+      "providers.v1" = "https://mirrors.cyshall.com/terraform/v1/providers/"
     }
   }
 EOF
